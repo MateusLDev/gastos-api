@@ -31,6 +31,6 @@ app.register(registerGasto)
 app.register(updateGasto)
 app.register(deleteGastos)
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ host: '0.0.0.0', port: 3333 }).then(() => {
   console.log("Server running");
 });

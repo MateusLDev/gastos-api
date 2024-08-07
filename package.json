@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "tsup src",
     "start": "node dist/server.js"
   },
   "keywords": [],
@@ -22,6 +25,7 @@
     "fastify-type-provider-zod": "^1.2.0",
     "firebase": "^10.12.4",
     "jwt-decode": "^4.0.0",
+    "tsup": "^8.2.4",
     "zod": "^3.23.8"
   }
 }
