@@ -26,7 +26,8 @@ app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
 app.register(fastifyCors, {
-  origin: 'https://gastos-api-9er7.onrender.com',
+  origin: '*',
+  methods: ['GET','POST', 'PUT', 'DELETE']
 })
 
 app.register(login)
