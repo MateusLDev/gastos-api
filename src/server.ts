@@ -5,6 +5,8 @@ import {
   jsonSchemaTransform,
 } from "fastify-type-provider-zod";
 
+import fastifyCors from '@fastify/cors';
+
 import { initializeFirebase } from "./lib/firebase";
 
 import { login } from './routes/login'
@@ -19,8 +21,13 @@ import { updateGasto } from './routes/updateGasto';
 initializeFirebase()
 const app = fastify();
 
+
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
+
+app.register(fastifyCors, {
+  origin: 'https://gastos-api-9er7.onrender.com',
+})
 
 app.register(login)
 app.register(register)
