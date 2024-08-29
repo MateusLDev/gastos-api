@@ -34,7 +34,7 @@ export async function updateGasto(app: FastifyInstance) {
         body: z.object({
           gasto: z.object({
             title: z.string(),
-            category: z.number(),
+            category: z.string(),
             price: z.string(),
             description: z.string().nullish(),
             createdAt: z.string(),

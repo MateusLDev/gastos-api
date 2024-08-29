@@ -33,7 +33,7 @@ export async function registerGasto(app: FastifyInstance) {
       schema: {
         body: z.object({
           title: z.string(),
-          category: z.number(),
+          category: z.string(),
           price: z.string(),
           description: z.string().max(100).nullish(),
           createdAt: z.string().optional(),

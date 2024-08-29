@@ -23,7 +23,7 @@ export async function getGastos(app: FastifyInstance) {
                 z.object({
                   id: z.string(),
                   title: z.string(),
-                  category: z.number(),
+                  category: z.string(),
                   price: z.string(),
                   description: z.string().nullish(),
                   createdAt: z.string(),

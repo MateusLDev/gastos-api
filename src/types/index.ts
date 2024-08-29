@@ -1,7 +1,7 @@
 export interface Gastos {
   id?: string,
   title: string,
-  category: number,
+  category: string,
   price: string,
   description?: string | null
   createdAt?: string
