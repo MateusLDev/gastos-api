@@ -38,7 +38,7 @@ export async function getGastosById(app: FastifyInstance) {
             category: z.string(),
             price: z.string(),
             description: z.string().nullish(),
-            createdAt: z.string(),
+            createdAt: z.date(),
           }),
           404: z.object({
             message: z.string(),

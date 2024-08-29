@@ -4,5 +4,5 @@ export interface Gastos {
   category: string,
   price: string,
   description?: string | null
-  createdAt?: string
+  createdAt?: Date
 }
