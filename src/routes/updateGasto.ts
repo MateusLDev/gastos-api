@@ -37,7 +37,7 @@ export async function updateGasto(app: FastifyInstance) {
             category: z.string(),
             price: z.string(),
             description: z.string().nullish(),
-            createdAt: z.date(),
+            createdAt: z.string(),
           })
         }),
         response: {
