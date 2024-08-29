@@ -36,7 +36,7 @@ export async function registerGasto(app: FastifyInstance) {
           category: z.string(),
           price: z.string(),
           description: z.string().max(100).nullish(),
-          createdAt: z.string().optional(),
+          createdAt: z.date().optional(),
         }),
         headers: z.object({
           authorization: z.string().optional(),
