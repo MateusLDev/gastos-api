@@ -26,7 +26,7 @@ export async function getGastos(app: FastifyInstance) {
                   category: z.string(),
                   price: z.string(),
                   description: z.string().nullish(),
-                  createdAt: z.string(),
+                  createdAt: z.string().optional(),
                 })
               )
               .default([])
@@ -67,7 +67,7 @@ export async function getGastos(app: FastifyInstance) {
               title: gasto.title,
               category: gasto.category,
               price: gasto.price,
-              createdAt: gasto.createdAt!,
+              createdAt: gasto.createdAt,
               description: gasto.description,
             };
           }),
