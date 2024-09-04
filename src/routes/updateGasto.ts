@@ -33,6 +33,7 @@ export async function updateGasto(app: FastifyInstance) {
         }),
         body: z.object({
           gasto: z.object({
+            id: z.string(),
             title: z.string(),
             category: z.string(),
             price: z.string(),
