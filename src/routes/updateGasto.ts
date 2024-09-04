@@ -32,14 +32,12 @@ export async function updateGasto(app: FastifyInstance) {
           gastoId: z.string(),
         }),
         body: z.object({
-          gasto: z.object({
             id: z.string(),
             title: z.string(),
             category: z.string(),
             price: z.string(),
             description: z.string().nullish(),
             createdAt: z.string(),
-          })
         }),
         response: {
           200: z.string(),
@@ -54,7 +52,7 @@ export async function updateGasto(app: FastifyInstance) {
     },
     async (request, reply) => {
       const { gastoId } = request.params;
-      const { gasto } = request.body
+      const gasto = request.body
       const { authorization } = request.headers;
 
       const token = getTokenByAuthorizationString(authorization!);
