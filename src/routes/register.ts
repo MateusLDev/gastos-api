@@ -12,7 +12,7 @@ export async function register(app: FastifyInstance) {
       schema: {
         body: z.object({
           email: z.string().email(),
-          password: z.string(),
+          password: z.string().min(6),
         }),
         response: {
           201: z.string(),
@@ -22,6 +22,10 @@ export async function register(app: FastifyInstance) {
     },
     async (request, reply) => {
       const { email, password } = request.body;
+
+      if(password.length < 6) {
+        return reply.status(400).send("Senha deve ter no mínimo 6 caracteres!");
+      }
 
       const auth = getAuth();
 
