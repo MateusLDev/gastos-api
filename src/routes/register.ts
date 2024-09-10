@@ -12,7 +12,7 @@ export async function register(app: FastifyInstance) {
       schema: {
         body: z.object({
           email: z.string().email(),
-          password: z.string().min(6),
+          password: z.string(),
         }),
         response: {
           201: z.string(),
